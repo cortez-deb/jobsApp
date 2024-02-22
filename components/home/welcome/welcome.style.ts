@@ -49,6 +49,14 @@ const styles =
         justifyContent: "center",
         alignItems: "center",
       },
+      regularbtn: {
+        width: 50,
+        height: 50,
+        backgroundColor: COLORS.secondary,
+        borderRadius: SIZES.medium,
+        justifyContent: "center",
+        alignItems: "center",
+      },
       searchBtnImage: {
         width: "50%",
         height: "50%",

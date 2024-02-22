@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     marginHorizontal: SIZES.medium,
   },
   jobName: {
-    fontSize: SIZES.medium,
+    fontSize: SIZES.small,
     fontFamily: "DMBold",
     color: COLORS.primary,
   },
