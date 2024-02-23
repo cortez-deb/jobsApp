@@ -10,7 +10,6 @@ const Popularjobs = () => {
 const router = useRouter()
 const { data, loading, error } = useFetch('search', {query: 'popular', num_pages: 1,})
 const isloading = loading
-console.log(data )
 return (
     <View style={styles.container}>
       <View style={styles.header}>

@@ -17,6 +17,7 @@ const Welcome = (props: any) => {
   const router = useRouter()
   const [activeJobType, setActiveJobType] = useState("Full Time")
   const Style = styles(props)
+  const { search, setSearch, handleClick } = props
   const jobTypes = ["Full Time", "Part Time", "Remote", "Freelance", "Internship", "Temporary"]
   return (
     <View>
@@ -28,12 +29,16 @@ const Welcome = (props: any) => {
             <TextInput
               style={Style.searchInput}
               placeholder="Search for jobs"
-              value={''}
-              onChangeText={(text) => { }}
+              value={search}
+              onChangeText={(text) => {setSearch(text) }}
             />
           </View>
           <View style={Style.searchBtn}>
-            <TouchableOpacity style={Style.searchBtn} onPress={() => { }}>
+            <TouchableOpacity style={Style.searchBtn} onPress={() => {
+              if (search) {
+                handleClick
+              }
+             }}>
               <Image
                 source={icons.search}
                 style={Style.searchBtnImage}

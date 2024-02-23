@@ -6,7 +6,7 @@ import { Nearbyjobs,Popularjobs,ScreenHeaderBtn,Welcome, } from "../components"
 
 export default function Page() {
   const router = useRouter();
-
+  const [search, setSearch] = useState("");
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -18,12 +18,14 @@ export default function Page() {
             <ScreenHeaderBtn
               iconUrl={icons.menu}
               dimensions="60%"
+              handlePress={() => router.navigate("menu")}
             />
           ),
           headerRight: () => (
             <ScreenHeaderBtn
               iconUrl={images.profile}
               dimensions="100%"
+              handlePress={() => router.navigate("profile")}
             />
           ),
           headerTitle: ""
@@ -36,7 +38,15 @@ export default function Page() {
             paddingHorizontal: SIZES.medium,
           }}
         >
-          <Welcome />
+          <Welcome 
+          search={search}
+          setSearch={setSearch}
+          hanleClick={() =>{
+            if(search){
+              router.push(`/search/${search}`)
+            }
+          }}
+          />
           <Popularjobs />
           <Nearbyjobs />
         </View>

@@ -6,7 +6,7 @@ import{ styles} from './screenheader.style'
 const ScreenHeaderBtn = ({ iconUrl, dimensions, handlePress}:{iconUrl:any,dimensions:any,handlePress:any} ) => {
   const Styles = styles(dimensions)
   return (
-    <TouchableOpacity style={Styles.btnContainer}>
+    <TouchableOpacity style={Styles.btnContainer} onPress={handlePress}>
       <Image
         source={iconUrl}
         resizeMode="cover"
